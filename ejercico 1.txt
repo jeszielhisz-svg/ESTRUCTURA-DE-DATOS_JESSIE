@@ -1,0 +1,62 @@
+package ec.edu.puce;
+
+import java.util.Scanner;
+import java.util.Stack;
+
+public class Stacks {
+	
+    public static void main(String[] args) {
+    	
+        System.out.println("----Pilas----");
+        
+        // 1. Configuración inicial del Scanner para lecturas previas
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Ingresa el texto: ");
+        String texto = sc.next();
+        System.out.println(texto);
+        
+        System.out.println("Ingresa el texto: ");
+        texto = sc.next();
+        System.out.println(texto);
+        
+        // 2. Creación de la Pila (Stack)
+        Stack<String> pila = new Stack<String>();
+        
+        // 3. Llenando la pila (LIFO: el último en entrar es el primero en salir)
+        pila.push("a");
+        pila.push("b");
+        pila.push("c");
+        pila.push("d");
+        pila.push("e");
+        pila.push("f");
+        
+        // Imprime la pila completa: [a, b, c, d, e, f]
+        System.out.println(pila);
+        
+        // 4. Operación POP: Saca el elemento que está arriba (la "f") y lo guarda
+        String textoTemporal = pila.pop();
+        
+        // Imprime la pila sin la "f": [a, b, c, d, e]
+        System.out.println(pila);
+        
+        // 5. Operación PUSH: Devuelve la "f" (textoTemporal) a la cima de la pila
+        pila.push(textoTemporal);
+        
+        // 6. Operación PEEK: Muestra el elemento de arriba ("f") SIN sacarlo de la pila
+        System.out.println(pila.peek());
+        
+        // Imprime la pila final que vuelve a estar completa: [a, b, c, d, e, f]
+        System.out.println(pila);
+        
+        // Cerramos el scanner al terminar
+        sc.close();
+    }
+    
+}
+	
+	
+
+//Tú bloc de notas debe tener el siguiente y ejecutar cada una de las acciones de este menú: 1. Agregar texto 2.Ctrl + Z 3.Ver texto completo  4.Salir (Sistem.exit)
+	
+	
